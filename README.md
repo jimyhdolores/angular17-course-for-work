@@ -2,11 +2,15 @@
 
 Este curso de Angular está diseñado para proporcionar a los participantes una sólida comprensión de los conceptos fundamentales de Angular, una de las plataformas de desarrollo de aplicaciones web más potentes y demandadas en la industria actual.🤗
 
+## Requisitos Previos:
+
+Se recomienda tener conocimientos básicos de HTML, CSS y JavaScript. No se requiere experiencia previa con Angular.
+
 # Consideraciones:
 
 **Cada clase se desarrolla en una rama independiente por lo que deben de moverse a la rama de la clase que necesitan repasar**💻
 
-**Las clases son en vivo por mi canal de [Twitch](https://www.twitch.tv/jimydolores) y el resumen de la clase son subidas a mi canal de YouTube [LogiDev](https://www.youtube.com/c/LogiDev), suscribete y comparte los videos de esa manera me ayudas a generar más contenido, muchas gracias.**
+**Las clases son en vivo por mi canal de [Twitch](https://www.twitch.tv/jimydolores) y el resumen de la clase son subidas a mi canal de YouTube [LogiDev](https://youtube.com/playlist?list=PLy09ETjgu8VqVi-FP7kmSP-n6botHJs_C&si=KMsk5Ss3L7GKebTb), suscribete y comparte los videos de esa manera me ayudas a generar más contenido, muchas gracias.**
 
 **Suscríbete a mi canal** 😎
 
