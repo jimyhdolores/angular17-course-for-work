@@ -1,27 +1,52 @@
-# Angular17CourseForWork
+# CURSO ANGULAR 17 PARA EL TRABAJO🔧⚙
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+Este curso de Angular está diseñado para proporcionar a los participantes una sólida comprensión de los conceptos fundamentales de Angular, una de las plataformas de desarrollo de aplicaciones web más potentes y demandadas en la industria actual.🤗
 
-## Development server
+# Consideraciones:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Cada clase se desarrolla en una rama independiente por lo que deben de moverse a la rama de la clase que necesitan repasar**💻
 
-## Code scaffolding
+**Las clases son en vivo por mi canal de [Twitch](https://www.twitch.tv/jimydolores) y el resumen de la clase son subidas a mi canal de YouTube [LogiDev](https://www.youtube.com/c/LogiDev), suscribete y comparte los videos de esa manera me ayudas a generar más contenido, muchas gracias.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Suscríbete a mi canal** 😎
 
-## Build
+https://www.youtube.com/c/LogiDev
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Sígueme en mis redes:**
 
-## Running unit tests
+👉Facebook : [LogiDev](https://facebook.com/LogiDev25)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+👉Instagram:[ @jimydolores](https://instagram.com/jimydolores/)
 
-## Running end-to-end tests
+👉Twitter: [ @jimydolores](https://twitter.com/jimydolores)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+👉LinkedIn: [Jimy Dolores](https://linkedin.com/in/jimyhuachodolores/)
 
-## Further help
+## Objetivos del Curso:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1.  **Dominar los Fundamentos de Angular:**
+
+    - Aprender los conceptos esenciales de Angular, como componentes, directivas, servicios y módulos.
+    - Comprender la estructura básica de una aplicación Angular.
+
+2.  **Creación de Aplicaciones Interactivas:**
+
+    - Explorar el enlace de datos bidireccional para crear aplicaciones más interactivas y dinámicas.
+    - Utilizar eventos y observables para gestionar la interactividad del usuario.
+
+3.  **Gestión de Estado:**
+
+    - Implementar técnicas efectivas para gestionar el estado de la aplicación.
+    - Integrar el enrutamiento para la navegación entre diferentes vistas.
+
+4.  **Conexión con Servicios RESTful:**
+
+    - Conectar la aplicación con servicios web RESTful para obtener y enviar datos.
+    - Manejar peticiones HTTP de manera eficiente.
+
+5.  **Optimización y Despliegue:**
+
+    - Comprender las mejores prácticas para optimizar el rendimiento de las aplicaciones Angular.
+    - Preparar la aplicación para el despliegue en entornos de producción.
+
+# Gracias
