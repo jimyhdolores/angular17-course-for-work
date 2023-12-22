@@ -1,0 +1,18 @@
+.menu {
+	background-color: white;
+	height: 100%;
+
+	.menu-ul {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 20px;
+		margin: 0;
+		&__item {
+			cursor: pointer;
+			&:hover {
+				color: #00dea3;
+			}
+		}
+	}
+}
