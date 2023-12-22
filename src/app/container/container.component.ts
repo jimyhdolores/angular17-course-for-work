@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ContainerComponent {
 	inputName = '';
+	clickButton() {
+		this.inputName = 'Nuevo valor';
+	}
 }
