@@ -1,79 +1,15 @@
-.container {
+.products {
+	padding: 1em;
 	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-template-rows: auto 1fr;
-	gap: 0px 0px;
-	grid-auto-flow: row;
-	grid-template-areas:
-		'grid-menu grid-header'
-		'grid-menu grid-main';
-	height: 100%;
+	gap: 1em;
+	grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+	justify-items: center;
 
-	.grid-menu {
-		grid-area: grid-menu;
-
-		.menu {
-			background-color: white;
-			height: 100%;
-
-			.menu-ul {
-				display: flex;
-				flex-direction: column;
-				gap: 1em;
-				padding: 20px;
-				margin: 0;
-				&__item {
-					cursor: pointer;
-					&:hover {
-						color: #00dea3;
-					}
-				}
-			}
-		}
+	&__product {
+		box-shadow: -4px 11px 31px -7px rgba(0, 0, 0, 0.34);
 	}
+}
 
-	.grid-header {
-		grid-area: grid-header;
-		padding: 20px 15px;
-		.header {
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
-
-			&__title {
-				font-weight: bold;
-			}
-			&__hour {
-				color: #707eae;
-				font-size: 10px;
-			}
-
-			.header-user {
-				display: flex;
-				gap: 1em;
-				align-items: flex-start;
-
-				&-notification {
-					background-color: white;
-					border-radius: 8px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					padding: 0.7em;
-					cursor: pointer;
-				}
-				&__user {
-					width: 48px;
-					height: 48px;
-				}
-			}
-		}
-	}
-
-	.grid-main {
-		grid-area: grid-main;
-		.main {
-			padding: 20px;
-		}
-	}
+.container {
+	background-color: red;
 }

@@ -1,0 +1,12 @@
+// @font-face {
+// 	font-family: 'Poppins-Black';
+// 	src: url('assets/fonts/Poppins-Black.ttf') format('truetype');
+// }
+
+@use 'variables/typography.scss' as typo;
+
+body {
+	font-family: typo.$main-family-regular, sans-serif;
+	font-size: 14px;
+	color: #3c3c3c;
+}

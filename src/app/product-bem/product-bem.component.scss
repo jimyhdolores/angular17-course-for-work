@@ -1,0 +1,46 @@
+// CSS SIMPLE
+@use '../../styles/variables/typography.scss' as typo;
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+
+	border: 1px solid #afafaf;
+	background-color: #fff;
+	text-align: center;
+	width: fit-content;
+	padding: 35px 46px;
+
+	.product {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 1em;
+
+		&__name-product {
+			font-size: 18px;
+			text-transform: uppercase;
+			font-family: typo.$google-font;
+		}
+	}
+
+	&__price {
+		font-size: 28px;
+		text-transform: uppercase;
+	}
+
+	&__button {
+		all: unset;
+		background: #eb6d9d;
+		padding: 14px 28px;
+		color: white;
+		font-weight: 600;
+		cursor: pointer;
+
+		&--disabled {
+			background: #838383;
+			color: #c5c5c5;
+		}
+	}
+}

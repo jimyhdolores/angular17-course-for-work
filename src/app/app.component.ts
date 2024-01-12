@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { ContainerModule } from './container/container.module';
+import { ProductBemModule } from './product-bem/product-bem.module';
+import { ProductModule } from './product/product.module';
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [ContainerModule],
+	imports: [ProductModule, ProductBemModule],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
