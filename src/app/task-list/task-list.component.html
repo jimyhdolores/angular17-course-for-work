@@ -1,0 +1,75 @@
+<!-- EJEMPLO PARA DIRECTIVAS DE ATRIBUTOS -->
+
+<!-- <div class="container">
+	<h1 class="container__title">Lista de Tareas</h1>
+	<div
+		class="task"
+		[ngClass]="{ 'task--completed': task.status === 'COMPLETED', 'task--progress': task.status === 'PROGRESS' }"
+	>
+		<p [ngStyle]="{ color: colorText }">{{ task.task }}</p>
+		<img class="task__icon" src="assets/icons/status-completed.png" alt="completado" />
+
+		<section>
+			<select class="task__status" (change)="changeStatus()" [(ngModel)]="task.status">
+				<option value="COMPLETED" [selected]="task.status === 'COMPLETED'">Completado</option>
+				<option value="PROGRESS" [selected]="task.status === 'PROGRESS'">En progreso</option>
+				<option value="PENDING" [selected]="task.status === 'PENDING'">Pendiente</option>
+			</select>
+
+			<select>
+				<option value="HIGH" [selected]="task.priority === 'HIGH'">Alta</option>
+				<option value="MEDIUM" [selected]="task.priority === 'MEDIUM'">Media</option>
+				<option value="LOW" [selected]="task.priority === 'LOW'">Baja</option>
+			</select>
+		</section>
+	</div>
+</div> -->
+
+<!-- EJEMPLO PARA DIRECTIVAS ESTRUCTURALES -->
+
+<div class="container">
+	<h1 class="container__title">Lista de Tareas</h1>
+	<section>
+		<input [(ngModel)]="inputValue" type="text" placeholder="Ingrese una tarea" />
+		<button (click)="updateTask()">Actualizar tarea</button>
+		<button (click)="refresh()">Actualizar Lista</button>
+	</section>
+	<br />
+	<div
+		*ngFor="let task of list_task; let i = index; trackBy: trackByItems"
+		class="task"
+		[ngClass]="{ 'task--completed': task.status === 'COMPLETED', 'task--progress': task.status === 'PROGRESS' }"
+	>
+		<span>Tarea: {{ i + 1 }} </span>
+		<p [ngStyle]="{ color: task.status === 'COMPLETED' ? 'green' : 'white' }">{{ task.task }}</p>
+		<img
+			*ngIf="task.status === 'COMPLETED'; else taskImage"
+			class="task__icon"
+			src="assets/icons/status-completed.png"
+		/>
+
+		<ng-template #taskImage>
+			<img class="task__icon" src="assets/icons/status-pending.png" />
+		</ng-template>
+		<!-- SI NO UTILIZAR EL trackBy, EL ELEMENTO VOLVERA A RENDERIZARCE -->
+		<!-- <app-task /> -->
+
+		<section>
+			<select class="task__status" (change)="changeStatus(task)" [(ngModel)]="task.status">
+				<option *ngFor="let status of LIST_OBJECT_STATES" [value]="status.key">
+					{{ status.text }}
+				</option>
+			</select>
+
+			<select [(ngModel)]="task.priority">
+				<option *ngFor="let prioriry of PRYORITY_LIST" [value]="prioriry.key">{{ prioriry.text }}</option>
+			</select>
+		</section>
+
+		<ng-container [ngSwitch]="task.priority">
+			<span class="task__priority-info" *ngSwitchCase="'HIGH'">Esta tarea es prioritaria</span>
+			<span class="task__priority-info" *ngSwitchCase="'MEDIUM'">Te recomiendo hacer esta tarea</span>
+			<span class="task__priority-info" *ngSwitchDefault>Prioridad baja</span>
+		</ng-container>
+	</div>
+</div>

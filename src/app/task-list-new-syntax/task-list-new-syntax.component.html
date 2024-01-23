@@ -1,0 +1,53 @@
+<div class="container">
+	<h1 class="container__title">Lista de Tareas</h1>
+	<section>
+		<input [(ngModel)]="inputValue" type="text" placeholder="Ingrese una tarea" />
+		<button (click)="updateTask()">Actualizar tarea</button>
+		<button (click)="refresh()">Actualizar Lista</button>
+	</section>
+	<br />
+
+	@for (task of list_task; let i=$index; track i) {
+
+	<div
+		class="task"
+		[ngClass]="{ 'task--completed': task.status === 'COMPLETED', 'task--progress': task.status === 'PROGRESS' }"
+	>
+		<span>Tarea: {{ i + 1 }} </span>
+		<p [ngStyle]="{ color: task.status === 'COMPLETED' ? 'green' : 'white' }">{{ task.task }}</p>
+
+		@if (task.status === 'COMPLETED') {
+		<img class="task__icon" src="assets/icons/status-completed.png" />
+		}@else {
+		<img class="task__icon" src="assets/icons/status-pending.png" />
+		}
+
+		<!-- SI NO UTILIZAR EL trackBy, EL ELEMENTO VOLVERA A RENDERIZARCE -->
+		<!-- <app-task /> -->
+
+		<section>
+			<select class="task__status" (change)="changeStatus(task)" [(ngModel)]="task.status">
+				@for (status of LIST_OBJECT_STATES; track $index) {
+				<option [value]="status.key">
+					{{ status.text }}
+				</option>
+				}
+			</select>
+
+			<select [(ngModel)]="task.priority">
+				@for (prioriry of PRYORITY_LIST; track $index) {
+				<option [value]="prioriry.key">{{ prioriry.text }}</option>
+				}
+			</select>
+		</section>
+
+		@switch (task.priority) { @case ('HIGH') {
+		<span class="task__priority-info">Esta tarea es prioritaria</span>
+		} @case ('MEDIUM') {
+		<span class="task__priority-info">Te recomiendo hacer esta tarea</span>
+		} @default {
+		<span class="task__priority-info">Prioridad baja</span>
+		} }
+	</div>
+	}@empty { Cargando... }
+</div>

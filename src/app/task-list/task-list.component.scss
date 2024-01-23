@@ -1,0 +1,35 @@
+.container {
+	padding: 1em;
+	box-shadow: 10px 10px 46px -5px #673ab7;
+	background-color: #331d59;
+	border-radius: 5px;
+	color: white;
+
+	.task {
+		padding: 0.5em;
+		display: flex;
+		flex-direction: column;
+		border-radius: 8px;
+		border: 2px solid #607d8b;
+		position: relative;
+		margin-bottom: 1em;
+		&__icon {
+			width: 20px;
+			position: absolute;
+			right: 16px;
+		}
+
+		&__status {
+			margin-right: 1em;
+		}
+
+		&--completed {
+			border-color: green;
+		}
+
+		&__priority-info {
+			font-weight: bold;
+			color: #ff9800;
+		}
+	}
+}
