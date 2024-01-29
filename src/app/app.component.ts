@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { DemoDirective } from './directives/demo.directive';
+import { ShowInfoComponent } from './show-info/show-info.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+	selector: 'app-root',
+	standalone: true,
+	imports: [CommonModule, UserFormComponent, DemoDirective, ShowInfoComponent],
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular17-course-for-work';
+	title = 'angular17-course-for-work';
 }

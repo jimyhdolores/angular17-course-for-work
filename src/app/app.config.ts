@@ -1,8 +1,8 @@
+import { registerLocaleData } from '@angular/common';
+import LocaleEsPe from '@angular/common/locales/es-PE';
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
+registerLocaleData(LocaleEsPe);
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+	providers: []
 };

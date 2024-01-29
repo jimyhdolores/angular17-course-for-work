@@ -1,0 +1,15 @@
+<!-- persona.component.html -->
+
+<div *ngFor="let persona of personas" class="person">
+	<div class="person-info">
+		<p>Nombre: {{ persona.nombre | uppercase }}</p>
+		<p>Apellido: {{ persona.apellido | lowercase }}</p>
+		<p>Fecha de Nacimiento: {{ persona.fechaNacimiento | date : 'dd/MM/yyyy' }}</p>
+		<p>Salario: {{ persona.salario | currency }}</p>
+		<!-- <p>Salario: {{ persona.salario | currency : 'PEN' : 'symbol' : '' : 'es-PE' }}</p> -->
+		<p>Salario: {{ persona.salario | customCurrency }}</p>
+
+		<p>Monto Decimal: {{ persona.montoDecimal | number : '1.3-3' }}</p>
+	</div>
+	<hr class="person__divider" />
+</div>
