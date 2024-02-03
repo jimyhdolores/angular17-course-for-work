@@ -1,0 +1,22 @@
+<mat-card>
+	@if (pokemon) {
+	<mat-card-header>
+		<mat-card-title>{{ pokemon.nombre }}</mat-card-title>
+	</mat-card-header>
+
+	<mat-card-content class="content">
+		<img class="content__pokemon" [src]="pokemon.imagen" [alt]="pokemon.nombre" />
+
+		<p>
+			{{ pokemon.description }}
+		</p>
+	</mat-card-content>
+
+	<mat-card-actions align="end">
+		<button mat-button color="warn" (click)="deletePokemon.emit(pokemon)">ELIMINAR</button>
+	</mat-card-actions>
+
+	}@else {
+	<h5>Seleccione un pokemon de la lista</h5>
+	}
+</mat-card>

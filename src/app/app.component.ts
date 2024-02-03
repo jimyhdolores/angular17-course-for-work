@@ -1,13 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DemoDirective } from './directives/demo.directive';
-import { ShowInfoComponent } from './show-info/show-info.component';
-import { UserFormComponent } from './user-form/user-form.component';
-
+import { PokemonsComponent } from './pokemons/pokemons.component';
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [CommonModule, UserFormComponent, DemoDirective, ShowInfoComponent],
+	imports: [PokemonsComponent],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
