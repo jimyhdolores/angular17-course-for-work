@@ -16,9 +16,20 @@
 		<mat-drawer-content class="drawer-container__content">
 			<h1>Lista de productos</h1>
 			<div class="products">
-				@for (product of products; track product.id) {
-				<app-product [product]="product" />
-				}
+				<!-- La razón por la que aparenta hacer un bucle infinito, es que Angular ejecuta la detección de cambios
+          para verificar si algo cambio y si es necesario actualizar el DOM, y recordar que un evento asincrónico activa
+          la detección de cambios como la finalización de una solicitud XMLHttpRequest.
+          En este caso se esta llamando directamente la función getProducts(), tambien el asyncPipe llama internamente markForCheck
+          cada vez que se emite un nuevo valor. -->
+
+          <!-- @for (product of _productApiService.getProducts() | async; track product.id) {
+            <app-product [product]="product" />
+          } -->
+
+          <!-- Un enfoque reactivo sería lo ideal para manejar automaticamente la subscripción -->
+          @for (product of products$ | async; track product.id) {
+            <app-product [product]="product" />
+          }
 			</div>
 		</mat-drawer-content>
 	</mat-drawer-container>
