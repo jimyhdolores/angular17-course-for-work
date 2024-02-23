@@ -1,0 +1,21 @@
+.card {
+	max-width: 400px;
+	height: 620px;
+	&__image {
+		width: 100%;
+		height: auto;
+		max-height: 300px;
+		object-fit: cover;
+	}
+
+	&__title {
+		max-width: 200px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__content {
+		flex: 1;
+	}
+}

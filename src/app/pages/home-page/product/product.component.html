@@ -1,0 +1,19 @@
+@if (product) {
+<mat-card class="card">
+	<mat-card-header>
+		<mat-card-title class="card__title">{{ product.title }}</mat-card-title>
+		<mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+	</mat-card-header>
+	<img mat-card-image class="card__image" [src]="product.image" />
+
+	<mat-card-content class="card__content">
+		<p>
+			{{ product.description }}
+		</p>
+	</mat-card-content>
+	<mat-card-actions>
+		<button mat-raised-button color="primary" (click)="clickAddToCard()">Agregar al carrito</button>
+	</mat-card-actions>
+</mat-card>
+
+}

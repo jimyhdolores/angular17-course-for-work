@@ -1,0 +1,34 @@
+import { Component, OnInit, inject } from '@angular/core';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbar } from '@angular/material/toolbar';
+import { CartService } from '../../services/cart.service';
+import { IApiResponseProduct } from '../../services/models/product-api. interface.';
+import { ProductsApiService } from '../../services/products-api.service';
+import { ProductComponent } from './product/product.component';
+
+@Component({
+	selector: 'app-home-page',
+	standalone: true,
+	imports: [MatToolbar, MatIcon, MatButtonModule, MatBadgeModule, MatSidenavModule, ProductComponent],
+
+	templateUrl: './home-page.component.html',
+	styleUrl: './home-page.component.scss'
+})
+export class HomePageComponent implements OnInit {
+	private readonly _productApi = inject(ProductsApiService);
+	private readonly _cartService = inject(CartService);
+
+	products: IApiResponseProduct[] = [];
+	count = 0;
+	ngOnInit(): void {
+		this._productApi.getProducts().subscribe((data) => (this.products = data));
+		this._cartService.cartObservable$.subscribe({
+			next: (number) => {
+				this.count = number;
+			}
+		});
+	}
+}

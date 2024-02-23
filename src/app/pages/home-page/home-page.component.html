@@ -1,0 +1,25 @@
+<div class="container">
+	<mat-toolbar color="primary" class="toolbar">
+		<span>My App</span>
+		<span class="toolbar__spacer"></span>
+
+		<button mat-icon-button class="favorite-icon" (click)="drawer.toggle()">
+			<mat-icon [matBadge]="count" matBadgeColor="accent" aria-hidden="false">shopping_cart</mat-icon>
+		</button>
+	</mat-toolbar>
+
+	<mat-drawer-container class="drawer-container" [hasBackdrop]="true">
+		<mat-drawer #drawer mode="over" position="end">
+			<h3>Productos seleccionados</h3>
+		</mat-drawer>
+
+		<mat-drawer-content class="drawer-container__content">
+			<h1>Lista de productos</h1>
+			<div class="products">
+				@for (product of products; track product.id) {
+				<app-product [product]="product" />
+				}
+			</div>
+		</mat-drawer-content>
+	</mat-drawer-container>
+</div>
