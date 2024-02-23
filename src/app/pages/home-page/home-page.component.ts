@@ -18,13 +18,13 @@ import { ProductComponent } from './product/product.component';
 	styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent implements OnInit {
-	private readonly _productApi = inject(ProductsApiService);
+	private readonly _productApiService = inject(ProductsApiService);
 	private readonly _cartService = inject(CartService);
 
 	products: IApiResponseProduct[] = [];
 	count = 0;
 	ngOnInit(): void {
-		this._productApi.getProducts().subscribe((data) => (this.products = data));
+		this._productApiService.getProducts().subscribe((data) => (this.products = data));
 		this._cartService.cartObservable$.subscribe({
 			next: (number) => {
 				this.count = number;
