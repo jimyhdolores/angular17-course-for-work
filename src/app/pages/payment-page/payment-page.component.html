@@ -4,7 +4,17 @@
 	</button>
 
 	<h1>Tus productos seleccionados</h1>
-	<button class="container__button" mat-raised-button color="primary" routerLink="/payment/simple-product-detail">
+	<!-- <button class="container__button" mat-raised-button color="primary" routerLink="/payment/simple-product-detail" >
+		Ver detalle simple
+	</button> -->
+
+	<button
+		class="container__button"
+		mat-raised-button
+		color="primary"
+		[routerLink]="['./', 'simple-product-detail']"
+		[queryParamsHandling]="'preserve'"
+	>
 		Ver detalle simple
 	</button>
 

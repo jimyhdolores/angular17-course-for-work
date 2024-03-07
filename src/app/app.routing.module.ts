@@ -2,32 +2,45 @@ import { NgModule } from '@angular/core';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import FullProductDetailsPageComponent from './pages/payment-page/full-product-details-page/full-product-details-page.component';
+import { PaymentPageComponent } from './pages/payment-page/payment-page.component';
+import { SimpleProductDetailPageComponent } from './pages/payment-page/simple-product-detail-page/simple-product-detail-page.component';
 import { ProductsResolverService } from './services/products.resolver';
-// import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
 	// { path: '', component: HomePageComponent },
 	{ path: 'home', component: HomePageComponent },
 	{
 		path: 'login',
-		title: 'Inicio de sesión', // El atributo title esta disponible a partir de la versión 14+
 		pathMatch: 'prefix',
-		loadChildren: () => import('./pages/login-page/login-page.module').then((m) => m.LoginModule)
+		component: LoginPageComponent
 	},
 	{
 		path: 'payment/:user',
-		title: 'Pagos', // El atributo title esta disponible a partir de la versión 14+
 		data: { title: 'Pagos' },
 		resolve: { products: ProductsResolverService },
-		loadChildren: () => import('./pages/payment-page/payment.routes').then((r) => r.PaymentRoutes)
+		component: PaymentPageComponent,
+		children: [
+			{ path: 'simple-product-detail', component: SimpleProductDetailPageComponent },
+			{
+				path: 'full-product-details',
+				component: FullProductDetailsPageComponent
+			},
+			{
+				path: '',
+				pathMatch: 'full',
+				redirectTo: 'simple-product-detail'
+			}
+		]
 	},
 	//SE RECOMIENDA PONER A FINAL DE LAS RUTAS EL USO DE COMODINES
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'login', redirectTo: '/login', pathMatch: 'prefix' },
 	{
 		path: '**',
-		// component: NotFoundPageComponent
-		loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule)
+		component: NotFoundPageComponent
 	}
 ];
 
