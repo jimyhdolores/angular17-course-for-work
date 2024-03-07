@@ -1,0 +1,32 @@
+<div class="container">
+	<mat-card class="card">
+		<mat-card-header class="card__title">
+			<mat-card-title>Inicio de Sesión</mat-card-title>
+		</mat-card-header>
+
+		<mat-card-content class="card-content">
+			<mat-form-field appearance="outline">
+				<mat-label>Usuario</mat-label>
+				<input matInput placeholder="Ingrese su usuario" />
+				<mat-icon matSuffix>account_circle</mat-icon>
+			</mat-form-field>
+
+			<mat-form-field appearance="outline">
+				<mat-label>Contraseña</mat-label>
+				<input matInput type="password" placeholder="Ingrese su Contraseña" />
+				<mat-icon matSuffix>lock</mat-icon>
+			</mat-form-field>
+
+			<!-- <button
+				mat-raised-button
+				color="primary"
+				routerLink="/home"
+				[queryParams]="{ user: 'jimy' }"
+				[state]="{ isAdmin: true }"
+			>
+				Iniciar sesión
+			</button> -->
+			<button mat-raised-button color="primary" (click)="clickSingUp()">Iniciar sesión</button>
+		</mat-card-content>
+	</mat-card>
+</div>

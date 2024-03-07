@@ -18,4 +18,12 @@
 	&__content {
 		flex: 1;
 	}
+
+	&__description {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 8; /* Número de líneas a mostrar */
+		-webkit-box-orient: vertical;
+	}
 }

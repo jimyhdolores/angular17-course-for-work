@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { RoutingModule } from './app.routing.module';
 
 @NgModule({
 	declarations: [AppComponent],
-	imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, HomePageComponent],
+	imports: [BrowserModule, BrowserAnimationsModule, HttpClientModule, RoutingModule],
 	bootstrap: [AppComponent],
 	providers: [provideAnimationsAsync()]
 })

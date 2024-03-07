@@ -3,6 +3,7 @@
 		<span>My App</span>
 		<span class="toolbar__spacer"></span>
 
+		<button mat-flat-button color="primary" routerLink="/login">Iniciar sesión</button>
 		<button mat-icon-button class="favorite-icon" (click)="drawer.toggle()">
 			<mat-icon [matBadge]="count" matBadgeColor="accent" aria-hidden="false">shopping_cart</mat-icon>
 		</button>
@@ -11,6 +12,7 @@
 	<mat-drawer-container class="drawer-container" [hasBackdrop]="true">
 		<mat-drawer #drawer mode="over" position="end">
 			<h3>Productos seleccionados</h3>
+			<button mat-stroked-button color="primary" routerLink="/payment/logidev">Pagar</button>
 		</mat-drawer>
 
 		<mat-drawer-content class="drawer-container__content">
@@ -22,14 +24,14 @@
           En este caso se esta llamando directamente la función getProducts(), tambien el asyncPipe llama internamente markForCheck
           cada vez que se emite un nuevo valor. -->
 
-          <!-- @for (product of _productApiService.getProducts() | async; track product.id) {
+				<!-- @for (product of _productApiService.getProducts() | async; track product.id) {
             <app-product [product]="product" />
           } -->
 
-          <!-- Un enfoque reactivo sería lo ideal para manejar automaticamente la subscripción -->
-          @for (product of products$ | async; track product.id) {
-            <app-product [product]="product" />
-          }
+				<!-- Un enfoque reactivo sería lo ideal para manejar automaticamente la subscripción -->
+				@for (product of products$ | async; track product.id) {
+				<app-product [product]="product" />
+				}
 			</div>
 		</mat-drawer-content>
 	</mat-drawer-container>

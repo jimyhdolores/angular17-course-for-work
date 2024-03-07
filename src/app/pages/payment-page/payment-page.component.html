@@ -1,0 +1,24 @@
+<div class="container">
+	<button mat-icon-button routerLink="/">
+		<mat-icon>home</mat-icon>
+	</button>
+
+	<h1>Tus productos seleccionados</h1>
+	<button class="container__button" mat-raised-button color="primary" routerLink="/payment/simple-product-detail">
+		Ver detalle simple
+	</button>
+
+	<!-- <button
+		mat-raised-button
+		color="primary"
+		[routerLink]="['./', 'full-product-details']"
+		[queryParamsHandling]="'preserve'"
+	>
+		Ver detalle completo
+	</button> -->
+
+	<button mat-raised-button color="primary" (click)="clickViewFullDetail()">Ver detalle completo</button>
+	<div class="container__content">
+		<router-outlet />
+	</div>
+</div>

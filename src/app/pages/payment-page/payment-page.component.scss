@@ -1,0 +1,9 @@
+.container {
+	padding: 1em;
+	&__content {
+		margin-top: 1em;
+	}
+	&__button {
+		margin-right: 2em;
+	}
+}
