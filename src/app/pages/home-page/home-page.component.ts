@@ -35,6 +35,7 @@ export class HomePageComponent implements OnInit {
 	private readonly _cartService = inject(CartService);
 	private readonly _activatedRoute = inject(ActivatedRoute);
 	private readonly _router = inject(Router);
+	// private readonly _demoService = inject(DemoService);
 
 	products: IApiResponseProduct[] = [];
 	products$!: Observable<IApiResponseProduct[]>;

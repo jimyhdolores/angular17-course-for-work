@@ -3,7 +3,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { ProductsResolverService } from './services/products.resolver';
-// import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 const routes: Routes = [
 	// { path: '', component: HomePageComponent },
@@ -11,7 +10,6 @@ const routes: Routes = [
 	{
 		path: 'login',
 		title: 'Inicio de sesión', // El atributo title esta disponible a partir de la versión 14+
-		pathMatch: 'prefix',
 		loadChildren: () => import('./pages/login-page/login-page.module').then((m) => m.LoginModule)
 	},
 	{
@@ -26,8 +24,7 @@ const routes: Routes = [
 	{ path: 'login', redirectTo: '/login', pathMatch: 'prefix' },
 	{
 		path: '**',
-		// component: NotFoundPageComponent
-		loadChildren: () => import('./pages/not-found-page/not-found-page.module').then((m) => m.NotFoundPageModule)
+		loadComponent: () => import('./pages/not-found-page/not-found-page.component')
 	}
 ];
 

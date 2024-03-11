@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { DemoService } from '../../services/demo.service';
 
 @Component({
 	selector: 'app-login-page',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent {
 	private readonly _router = inject(Router);
+	private readonly _demoService = inject(DemoService);
 
 	clickSingUp(): void {
 		// this._router.navigateByUrl('/home');
