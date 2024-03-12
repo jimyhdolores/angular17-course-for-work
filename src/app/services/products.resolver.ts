@@ -24,6 +24,6 @@ import { ProductsApiService } from './products-api.service';
 
 export const ProductsResolverService: ResolveFn<IApiResponseProduct[]> = (route, state) => {
 	const _productsApiService = inject(ProductsApiService);
-	console.log('Productos desde el resolver...', route);
+
 	return _productsApiService.getProducts();
 };
