@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
-import { Observable, delay } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IApiResponseProduct } from './models/product-api. interface.';
 import { ProductsApiService } from './products-api.service';
 
@@ -12,6 +12,7 @@ export class ProductsResolverService implements Resolve<IApiResponseProduct[]> {
 
 	resolve(route: ActivatedRouteSnapshot): Observable<IApiResponseProduct[]> {
 		console.log('Productos desde el resolver...', route);
-		return this._productsApiService.getProducts().pipe(delay(3000));
+		// return this._productsApiService.getProducts().pipe(delay(3000));
+		return this._productsApiService.getProducts();
 	}
 }

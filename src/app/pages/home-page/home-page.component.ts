@@ -36,6 +36,7 @@ export class HomePageComponent implements OnInit {
 	private readonly _activatedRoute = inject(ActivatedRoute);
 	private readonly _router = inject(Router);
 	// private readonly _demoService = inject(DemoService);
+	// private readonly _cartApiService = inject(CartApiService, { optional: true });
 
 	products: IApiResponseProduct[] = [];
 	products$!: Observable<IApiResponseProduct[]>;
@@ -48,6 +49,7 @@ export class HomePageComponent implements OnInit {
 	ngOnInit(): void {
 		this._getApis();
 		this._getValueRoutes();
+		// console.log(this._cartApiService);
 	}
 
 	private _getValueRoutes() {

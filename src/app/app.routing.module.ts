@@ -6,7 +6,7 @@ import { ProductsResolverService } from './services/products.resolver';
 
 const routes: Routes = [
 	// { path: '', component: HomePageComponent },
-	{ path: 'home', component: HomePageComponent },
+	{ path: 'home', title: 'Home', component: HomePageComponent },
 	{
 		path: 'login',
 		title: 'Inicio de sesión', // El atributo title esta disponible a partir de la versión 14+
