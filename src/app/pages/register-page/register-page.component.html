@@ -1,0 +1,66 @@
+<div class="container">
+	<mat-card class="card">
+		<mat-card-header class="card__title">
+			<mat-card-title>Registro</mat-card-title>
+		</mat-card-header>
+
+		<mat-card-content>
+			<form class="form" [formGroup]="formGroup" (ngSubmit)="clickRegister()">
+				<mat-form-field appearance="outline">
+					<mat-label>Nombres</mat-label>
+					<input matInput type="text" formControlName="names" />
+					@if(firtsField.hasError('required')){
+					<mat-error> Ingrese sus nombres </mat-error>
+					}
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>Apellidos</mat-label>
+					<input matInput type="text" formControlName="lastName" />
+					@if(lastNameField.hasError('required')){
+					<mat-error> Ingrese sus apellidos </mat-error>
+					}
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>E-mail</mat-label>
+					<input matInput type="email" formControlName="email" />
+					@if(emailField.hasError('required')){
+					<mat-error>Ingrese su e-mail </mat-error>
+					} @if(emailField.hasError('email')){
+					<mat-error> Ingrese un e-mail valido </mat-error>
+					}
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>Contraseña</mat-label>
+					<input matInput type="password" formControlName="password" />
+					@if(passwordField.hasError('customPasswordValidator')){
+					<mat-error>
+						La contraseña debe tener al menos una mayúscula, minúscula, simbolo, número y mayor a 8 caracteres
+					</mat-error>
+					} @if(passwordField.hasError('required')){
+					<mat-error> Ingrese una contraseña </mat-error>
+					}
+				</mat-form-field>
+
+				<mat-form-field appearance="outline">
+					<mat-label>Repetir contraseña</mat-label>
+					<input
+						matInput
+						type="password"
+						formControlName="confirmPassword"
+						[errorStateMatcher]="passwordStateMatcher"
+					/>
+					@if(confirmPasswordField.hasError('required')){
+					<mat-error> Ingrese una contraseña </mat-error>
+					} @if(formGroup.hasError('crossConfirmPasswordError')){
+					<mat-error> La contraseña no coincide, verifique </mat-error>
+					}
+				</mat-form-field>
+
+				<button mat-raised-button color="primary" (click)="clickRegister()">Registrarse</button>
+			</form>
+		</mat-card-content>
+	</mat-card>
+</div>

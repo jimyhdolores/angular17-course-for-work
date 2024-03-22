@@ -10,6 +10,11 @@ export default [
 		loadChildren: () => import('./pages/login-page/login-page.module').then((m) => m.LoginModule)
 	},
 	{
+		path: 'register',
+		title: 'Registro',
+		loadComponent: () => import('./pages/register-page/register-page.component')
+	},
+	{
 		path: 'payment/:user',
 		data: { title: 'Pagos' },
 		resolve: { products: ProductsResolverService },
